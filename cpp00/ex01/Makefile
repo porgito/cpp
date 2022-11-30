@@ -6,7 +6,7 @@
 #    By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/30 02:11:14 by jlaurent          #+#    #+#              #
-#    Updated: 2022/11/30 02:11:14 by jlaurent         ###   ########.fr        #
+#    Updated: 2022/11/30 12:41:24 by jlaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ FLAGS	= -Wall -Wextra -Werror -std=c++98
 NAME	= MyPhoneBook
 
 ${NAME}:	${OBJS}
-					g++ ${FLAGS} ${OBJS} -o ${NAME}
+					c++ ${FLAGS} ${OBJS} -o ${NAME}
 
 all:		${NAME}
 

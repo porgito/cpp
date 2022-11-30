@@ -20,12 +20,12 @@ class PhoneBook
 private:
     int     id;
     Contact contact[9];
+    void    choose(int num, int full);
 public:
     PhoneBook(void);
     ~PhoneBook(void);
     void    add(int num);
     void    search(int  num, int full);
-    void    choose(int num, int full);
 };
 
 #endif

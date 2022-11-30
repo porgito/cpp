@@ -26,14 +26,14 @@ private:
     std::string nickname;
     std::string phone_number;
     std::string darkest_secret;
-
+    void    truncate(std::string name);
+    void    blank(int i);
 public:
     Contact(void);
     ~Contact(void);
     void    info(int id);
     void    print(void);
     void    printall(void);
-    void    truncate(std::string name);
 };
 
 #endif

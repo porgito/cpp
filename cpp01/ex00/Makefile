@@ -3,32 +3,32 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jlaurent <jlaurent@student.42.fr>          +#+  +:+       +#+         #
+#    By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/11/30 12:40:08 by jlaurent          #+#    #+#              #
-#    Updated: 2022/11/30 12:40:30 by jlaurent         ###   ########.fr        #
+#    Created: 2022/11/30 13:23:18 by jlaurent          #+#    #+#              #
+#    Updated: 2022/11/30 13:30:23 by jlaurent         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	megaphone.cpp
+SRCS	=	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME	=	megaphone
+NAME	=	Zombie
 
 ${NAME}:	${OBJS}
-				c++ ${FLAGS} ${OBJS} -o ${NAME}
+						g++ ${FLAGS} ${OBJS} -o ${NAME}
 
 all:		${NAME}
 
 clean:
-				rm -rf ${OBJS}
+						rm -rf ${OBJS}
 
 fclean:		clean
-				rm -rf ${OBJS} ${NAME}
+						rm -rf ${OBJS} ${NAME}
 
-re:		fclean all
+re:			fclean all
 
 .PHONY:		all clean fclean re

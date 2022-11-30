@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Zombie.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/12 16:29:54 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/11/30 15:52:26 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/11/30 12:57:01 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/11/30 13:02:49 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef ZOMBIE_CLASS_H
+# define ZOMBIE_CLASS_H
 
 #include <iostream>
 #include <string>
 
-char *change(char *ac)
+class Zombie
 {
-	int	i;
-	for (i = 0; ac[i] != '\0'; i++)
-	{
-		ac[i] = std::toupper(ac[i]);
-	}
-	return (ac);
-}
+private:
+    std::string name;
+public:
+    Zombie(void);
+    ~Zombie(void);
+    void    announce( void );
+};
 
-int	main(int av, char **ac)
-{
-	int i;
-
-	if (av == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	for (i = 1; i < av; i++)
-		std::cout << change(ac[i]);
-	std::cout << std::endl;
-	return (0);
-}
+#endif
