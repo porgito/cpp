@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   harl.class.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 15:35:34 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/05 15:35:34 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/07 16:02:33 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/07 16:02:33 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#ifndef HARL_CLASS_HPP
+# define HARL_CLASS_HPP
 
-int main()
+#include <iostream>
+#include <string>
+
+class harl
 {
-    Zombie *ZHeap = newZombie("ZHeap");
+private:
+    void    debug();
+    void    info();
+    void    warning();
+    void    error();
+public:
+    harl();
+    ~harl();
 
-    randomChump("ZStack");
+    void    complain(std::string level);
+};
 
-    ZHeap->announce();
-    delete ZHeap;
+typedef void    (harl::*functions)(void);
 
-    return (0);
-}
+#endif

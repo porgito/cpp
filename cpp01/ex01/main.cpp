@@ -12,14 +12,24 @@
 
 #include "Zombie.class.hpp"
 
+std::string rollName(int N)
+{
+    std::string name[10] = { "Sully", "Bob", "Chichon", "Pipo", "Mino", "Bibou", "Nigo", "Bino", "Dibo", "Fido"};
+    if (N > 9)
+        N = N / 10;
+    if (N > 99)
+        N = N / 100;
+    if (N > 9)
+        return ("CLONE");
+    return (name[N]);
+}
+
 int main()
 {
-    Zombie *ZHeap = newZombie("ZHeap");
-
-    randomChump("ZStack");
-
-    ZHeap->announce();
-    delete ZHeap;
-
+    int N = 10;
+    Zombie  *Horde = zombieHorde(N, rollName(N));
+    for (int i = 0; i < N; i++)
+        Horde[i].announce();
+    delete [] Horde;
     return (0);
 }

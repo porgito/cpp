@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	=	main.cpp newZombie.cpp randomChump.cpp Zombie.cpp
+SRCS	=	main.cpp HumanA.cpp HumanB.cpp Weapon.cpp
 
 OBJS	=	${SRCS:.cpp=.o}
 
 FLAGS	=	-Wall -Wextra -Werror -std=c++98
 
-NAME	=	Zombie
+NAME	=	Weapon
 
 ${NAME}:	${OBJS}
 						c++ ${FLAGS} ${OBJS} -o ${NAME}

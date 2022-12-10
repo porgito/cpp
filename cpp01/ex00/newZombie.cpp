@@ -14,5 +14,6 @@
 
 Zombie* newZombie(std::string name)
 {
-    
+    Zombie  *ZHeap = new Zombie(name);
+    return (ZHeap);
 }

@@ -21,12 +21,13 @@ class Zombie
 private:
     std::string name;
 public:
-    Zombie(std::string name);
+    Zombie(void);
     ~Zombie(void);
     void    announce( void );
+    void    Name(std::string name);
 };
 
-Zombie* newZombie(std::string name);
-void    randomChump(std::string name);
+Zombie* zombieHorde(int N, std::string name);
+std::string rollName(int N);
 
 #endif

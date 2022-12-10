@@ -1,25 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanB.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/05 15:35:34 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/05 15:35:34 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/06 16:15:24 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/06 16:15:24 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.class.hpp"
+#ifndef HUMANB_CLASS_HPP
+# define HUMANB_CLASS_HPP
 
-int main()
+#include "Weapon.class.hpp"
+
+class HumanB
 {
-    Zombie *ZHeap = newZombie("ZHeap");
+private:
+    std::string name;
+    Weapon      *weapon;
+    int         hasWeapon;
+    int         set;
+public:
+    HumanB(std::string name);
+    ~HumanB();
 
-    randomChump("ZStack");
+    void    attack();
+    void    setWeapon(Weapon &weapon);
+};
 
-    ZHeap->announce();
-    delete ZHeap;
-
-    return (0);
-}
+#endif
