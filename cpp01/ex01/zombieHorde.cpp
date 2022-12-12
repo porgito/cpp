@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   newZombie.cpp                                      :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+        */
+/*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/30 13:04:19 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/12 17:21:33 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/05 16:29:52 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/05 16:29:52 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.class.hpp"
 
-Zombie* newZombie(std::string name)
+Zombie *zombieHorde(int N, std::string name)
 {
-    Zombie  *ZHeap = new Zombie(name);
-    return (ZHeap);
+    Zombie *Horde = new Zombie[N];
+    for (int i = 0; i < N; i++)
+        Horde[i].Name(rollName(i));
+    return (Horde);
 }
