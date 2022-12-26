@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Dog.class.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/22 22:18:07 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/22 22:18:07 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#ifndef DOG_CLASS_HPP
+# define DOG_CLASS_HPP
 
-#include "ClapTrap.class.hpp"
+#include "Animal.class.hpp"
 #include <iostream>
 #include <string>
 
-class FragTrap : public ClapTrap
+class Dog : public Animal
 {
 public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    Dog();
+    Dog(Dog const &rhs);
+    ~Dog();
 
-    FragTrap    &operator=(FragTrap const &rhs);
+    Dog &operator=(Dog const &rhs);
 
-    void    highFivesGuys();
-    void    attack(std::string const &target);
+    void    makeSound() const;
 };
 
 #endif

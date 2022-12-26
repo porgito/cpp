@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/23 23:09:17 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/23 23:09:17 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#include "Brain.class.hpp"
 
-#include "ClapTrap.class.hpp"
-#include <iostream>
-#include <string>
-
-class FragTrap : public ClapTrap
+Brain::Brain()
 {
-public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    std::cout << "Its brain has been created" << std::endl;
+}
 
-    FragTrap    &operator=(FragTrap const &rhs);
+Brain::Brain(Brain const &rhs)
+{
+    *this = rhs;
+    return;
+}
 
-    void    highFivesGuys();
-    void    attack(std::string const &target);
-};
+Brain::~Brain()
+{
+    std::cout << "Its brain has explosed" << std::endl;
+}
 
-#endif
+Brain   &Brain::operator=(Brain const &rhs)
+{
+    for (int i = 0; i < 100; i++)
+        this->ideas[i] = rhs.ideas[i];
+    return (*this);
+}

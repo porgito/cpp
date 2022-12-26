@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/22 22:30:58 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/22 22:30:58 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#include "Dog.class.hpp"
 
-#include "ClapTrap.class.hpp"
-#include <iostream>
-#include <string>
-
-class FragTrap : public ClapTrap
+Dog::Dog()
 {
-public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    this->type = "Dog";
+    std::cout << "It's a dog" << std::endl;
+}
 
-    FragTrap    &operator=(FragTrap const &rhs);
+Dog::Dog(Dog const &rhs)
+{
+    *this = rhs;
+    return;
+}
 
-    void    highFivesGuys();
-    void    attack(std::string const &target);
-};
+Dog::~Dog()
+{
+    std::cout << "The dog just died" << std::endl;
+}
 
-#endif
+Dog &Dog::operator=(Dog const &rhs)
+{
+    this->type = rhs.type;
+    return (*this);
+}
+
+void    Dog::makeSound() const
+{
+    std::cout << "ouaf ouaf" << std::endl;
+}

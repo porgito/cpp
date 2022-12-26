@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Brain.class.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/23 22:59:05 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/23 22:59:05 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#ifndef BRAIN_CLASS_HPP
+# define BRAIN_CLASS_HPP
 
-#include "ClapTrap.class.hpp"
 #include <iostream>
 #include <string>
 
-class FragTrap : public ClapTrap
+class Brain
 {
+protected:
+    std::string ideas[100];    
 public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    Brain();
+    Brain(Brain const &rhs);
+    ~Brain();
 
-    FragTrap    &operator=(FragTrap const &rhs);
-
-    void    highFivesGuys();
-    void    attack(std::string const &target);
+    Brain   &operator=(Brain const &rhs);
 };
+
 
 #endif

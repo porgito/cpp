@@ -1,34 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/22 22:23:41 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/22 22:23:41 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#include "Cat.class.hpp"
 
-#include "ClapTrap.class.hpp"
-#include <iostream>
-#include <string>
-
-class FragTrap : public ClapTrap
+Cat::Cat()
 {
-public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    this->type = "Cat";
+    std::cout << "It's a cat" << std::endl;
+}
 
-    FragTrap    &operator=(FragTrap const &rhs);
+Cat::Cat(Cat const &rhs)
+{
+    *this = rhs;
+    return;
+}
 
-    void    highFivesGuys();
-    void    attack(std::string const &target);
-};
+Cat::~Cat()
+{
+    std::cout << "The cat just died" << std::endl;
+}
 
-#endif
+Cat &Cat::operator=(Cat const &rhs)
+{
+    this->type = rhs.type;
+    return (*this);
+}
+
+void    Cat::makeSound() const
+{
+    std::cout << "miaou miaou" << std::endl;
+}

@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.class.hpp                                 :+:      :+:    :+:   */
+/*   AAnimal.class.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jlaurent <jlaurent@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/22 20:15:35 by jlaurent          #+#    #+#             */
-/*   Updated: 2022/12/22 20:15:35 by jlaurent         ###   ########.fr       */
+/*   Created: 2022/12/22 21:37:59 by jlaurent          #+#    #+#             */
+/*   Updated: 2022/12/22 21:37:59 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_CLASS_HPP
-# define FRAGTRAP_CLASS_HPP
+#ifndef AANIMAL_CLASS_HPP
+# define AANIMAL_CLASS_HPP
 
-#include "ClapTrap.class.hpp"
-#include <iostream>
 #include <string>
+#include <iostream>
 
-class FragTrap : public ClapTrap
+class AAnimal
 {
+protected:
+    std::string type;
 public:
-    FragTrap();
-    FragTrap(std::string const name);
-    FragTrap(FragTrap const &rhs);
-    ~FragTrap();
+    AAnimal();
+    AAnimal(AAnimal const &rhs);
+    virtual ~AAnimal();
 
-    FragTrap    &operator=(FragTrap const &rhs);
+    AAnimal  &operator=(AAnimal const &rhs);
 
-    void    highFivesGuys();
-    void    attack(std::string const &target);
+    virtual void    makeSound() const = 0;
+    virtual std::string     getType() const;
 };
+
+
 
 #endif
