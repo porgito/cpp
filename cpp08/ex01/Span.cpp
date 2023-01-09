@@ -6,7 +6,7 @@
 /*   By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 22:01:39 by jlaurent          #+#    #+#             */
-/*   Updated: 2023/01/08 22:01:39 by jlaurent         ###   ########.fr       */
+/*   Updated: 2023/01/09 11:33:17 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,22 @@ int Span::shortestSpan()
     return (test); 
 }
 
+void    Span::printVector()
+{
+    int ele;
+    for (unsigned int i = 0; i < this->vct.size(); i++)
+    {
+        std::cout << this->vct[i] << ", ";
+        ele = i + 1;
+    }
+    std::cout << "NUMBER OF ELEMENTS: " << ele << std::endl;
+}
+
 void    Span::random()
 {
     int fill = this->N - this->vct.size();
     for (int i = 0; i < fill; i++)
-        this->addNumber(rand() % (this->N * 10));
-    for (int i = 0; i < this->vct.size(); i++)
-        std::cout << this->vct[i] << ", ";
-    std::cout << std::endl;
+        this->addNumber(rand() % (this->N * 10)); 
 }
 
 void    Span::addIter(std::vector<int>::iterator begin, std::vector<int>::iterator end)

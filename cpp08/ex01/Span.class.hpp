@@ -6,7 +6,7 @@
 /*   By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/08 20:23:17 by jlaurent          #+#    #+#             */
-/*   Updated: 2023/01/08 20:23:17 by jlaurent         ###   ########.fr       */
+/*   Updated: 2023/01/09 11:16:07 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ public:
     void    addNumber(int begin, int end);
     int     shortestSpan();
     int     longestSpan();
+    void    printVector();
     void    random();
     void    addIter(std::vector<int>::iterator begin, std::vector<int>::iterator end);
     

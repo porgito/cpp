@@ -21,7 +21,7 @@ typedef struct Data
 {
     std::string str;
     int         i;
-};
+} Data;
 
 class Serialize
 {

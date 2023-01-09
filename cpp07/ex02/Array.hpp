@@ -6,7 +6,7 @@
 /*   By: jlaurent <jlaurent@42lausanne.ch>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:10:48 by jlaurent          #+#    #+#             */
-/*   Updated: 2023/01/07 15:10:48 by jlaurent         ###   ########.fr       */
+/*   Updated: 2023/01/09 13:27:15 by jlaurent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ public:
             throw   InvalidIndexException();
         this->n = n;
         this->arr = new T[n];
-
     }
     Array<T>(Array<T> const &rhs)
     {
@@ -45,7 +44,7 @@ public:
     ~Array<T>()
     {
         std::cout << "Destructor called" << std::endl;
-        if (this->n > 0)
+//        if (this->n > 0)
             delete [] this->arr;
     }
 
