@@ -16,6 +16,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <list>
 
 class Span
 {
@@ -28,11 +29,15 @@ public:
     ~Span();
 
     Span    &operator=(Span const &rhs);
+    std::vector<int>    &operator[](Span const &index);
 
     void    addNumber(int i);
+    void    addNumber(int begin, int end);
     int     shortestSpan();
     int     longestSpan();
-
+    void    random();
+    void    addIter(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+    
     class VectorFullException : std::exception
     {
     public:
