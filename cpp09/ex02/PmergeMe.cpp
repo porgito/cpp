@@ -60,11 +60,11 @@ void    PmergeMe::start_merge()
     int test = 1;
     for (auto &i : vct)
     {
-        //if (test > 5)
-        //{
-        //    std::cout << "[...]";
-        //    break; 
-        //}      
+        if (test > 5)
+        {
+            std::cout << "[...]";
+            break; 
+        }      
         std::cout << i << " ";
         test++;
     }
@@ -94,4 +94,5 @@ int    PmergeMe::launch(char **av)
     }
     std::cout << std::endl;
     start_merge();
+    return (0);
 }

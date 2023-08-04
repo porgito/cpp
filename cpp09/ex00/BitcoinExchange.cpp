@@ -35,12 +35,13 @@ BitcoinExchange::BitcoinExchange()
 
 BitcoinExchange::~BitcoinExchange() {}
 
-void    BitcoinExchange::start(std::string file)
+int    BitcoinExchange::start(std::string file)
 {
     std::ifstream fin(file);
     if (!fin)
     {
         std::cerr << "Error: could not find file." << std::endl;
+        return(0);
     }
     std::string str;
     std::getline(fin, str);
@@ -52,6 +53,7 @@ void    BitcoinExchange::start(std::string file)
     {
         check_format(str);
     }
+    return(0);
 }
 
 void    BitcoinExchange::check_format(std::string str)
@@ -126,7 +128,7 @@ bool    BitcoinExchange::check_d(std::string day)
 }
 
 bool    BitcoinExchange::check_v(std::string str)
-{ 
+{
     std::stringstream ss(str);
     std::string value;
     std::getline(ss, value, '|');
@@ -173,6 +175,8 @@ bool    BitcoinExchange::check_v(std::string str)
 
 void    BitcoinExchange::print(std::string str)
 {
+//    if (str.back() == '\r')
+//        str.pop_back();
     std::replace(str.begin(), str.end(), '|', '=');
     for (int i = 0; i < str.length(); i++)
     {

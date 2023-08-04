@@ -46,6 +46,7 @@ public:
             mergesort(ctn, len, mid + 1);
             merge(ctn, left, mid, len);
         }
+        return (0);
     }
     template<typename T>
     void    merge(T &ctn, int left, int mid, int len)

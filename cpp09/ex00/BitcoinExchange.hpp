@@ -37,7 +37,7 @@ public:
     BitcoinExchange();
     ~BitcoinExchange();
 
-    void    start(std::string file);
+    int    start(std::string file);
 };
 
 #endif
