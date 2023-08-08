@@ -50,26 +50,33 @@ void    PmergeMe::push_nb(char **av)
 
 void    PmergeMe::start_merge()
 {
-    struct timespec before;
-    clock_gettime(CLOCK_MONOTONIC, &before);
+    struct timeval begin, end;
+    gettimeofday(&begin, 0);
     mergesort(vct, vct.size() - 1, 0);
-    struct timespec after;
-    clock_gettime(CLOCK_MONOTONIC, &after);
+    gettimeofday(&end, 0);
+    long    microsecondsvct = end.tv_usec - begin.tv_usec;
 
     std::cout << "After: ";
     int test = 1;
-    for (auto &i : vct)
+    for (int i = 0; i < vct.size(); i++)
     {
-        if (test > 5)
+        if (i > 4)
         {
             std::cout << "[...]";
             break; 
         }      
-        std::cout << i << " ";
+        std::cout << vct[i] << " ";
         test++;
     }
     std::cout << std::endl;
-    std::cout << "Time to process a range of " << vct.size() << " elements with std::vector : " << after.tv_nsec - before.tv_nsec << std::endl;
+    std::cout << "Time to process a range of " << vct.size() << " elements with std::vector : " << microsecondsvct << " us" << std::endl;
+
+    struct timeval begindeq, enddeq;
+    gettimeofday(&begindeq, 0);
+    mergesort(deq, deq.size() - 1, 0);
+    gettimeofday(&enddeq, 0);
+    long    microsecondsdeq = enddeq.tv_usec - begindeq.tv_usec;
+    std::cout << "Time to process a range of " << deq.size() << " elements with std::vector : " << microsecondsdeq << " us" << std::endl;
 }
 
 int    PmergeMe::launch(char **av)
@@ -82,14 +89,14 @@ int    PmergeMe::launch(char **av)
     push_nb(av);
     std::cout << "Before: ";
     int test = 1;
-    for (auto &i : vct)
+    for (int i = 0; i < vct.size(); i++)
     {
-        if (test > 5)
+        if (i > 4)
         {
             std::cout << "[...]";
             break; 
         }      
-        std::cout << i << " ";
+        std::cout << vct[i] << " ";
         test++;
     }
     std::cout << std::endl;
